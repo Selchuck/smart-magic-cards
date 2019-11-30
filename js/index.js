@@ -1,4 +1,4 @@
-const suit = 'hearts';
+const suit = ['hearts', 'diamonds', 'clubs', 'spades'];
 const cardsWrapper = document.querySelector('.cards-wrapper');
 
 function createCards() {
