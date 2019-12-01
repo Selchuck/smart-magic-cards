@@ -37,6 +37,12 @@ function createButtons() {
   shuffle.setAttribute('class', 'btn btn-lg btn-secondary');
   const textNode = document.createTextNode('Shuffle');
   buttonWrapper.appendChild(shuffle).appendChild(textNode);
+
+  const showOrHide = document.createElement('BUTTON');
+  showOrHide.setAttribute('id', 'start-game');
+  showOrHide.setAttribute('class', 'btn btn-lg btn-secondary');
+  const textNode2 = document.createTextNode('Show/Hide');
+  buttonWrapper.appendChild(showOrHide).appendChild(textNode2);
 }
 
 // Function to start the game by clearing the wrapper, creating
