@@ -43,6 +43,12 @@ function createButtons() {
   showOrHide.setAttribute('class', 'btn btn-lg btn-secondary');
   const textNode2 = document.createTextNode('Show/Hide');
   buttonWrapper.appendChild(showOrHide).appendChild(textNode2);
+
+  const magic = document.createElement('BUTTON');
+  magic.setAttribute('id', 'start-game');
+  magic.setAttribute('class', 'btn btn-lg btn-secondary');
+  const textNode3 = document.createTextNode('Magic');
+  buttonWrapper.appendChild(magic).appendChild(textNode3);
 }
 
 // Function to start the game by clearing the wrapper, creating
