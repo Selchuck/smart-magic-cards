@@ -1,5 +1,6 @@
 const suits = ['hearts', 'diamonds', 'clubs', 'spades'];
 const cardsWrapper = document.querySelector('.cards-wrapper');
+const buttonWrapper = document.querySelector('.btn-wrapper');
 
 function createCards() {
   const cards = [];
@@ -28,6 +29,14 @@ function createCards() {
 // Function to clear out the initial button and create new buttons to play the game.
 function createButtons() {
   // Your Code
+  const mainButton = document.getElementById('start-game');
+  mainButton.remove();
+
+  const shuffle = document.createElement('BUTTON');
+  shuffle.setAttribute('id', 'start-game');
+  shuffle.setAttribute('class', 'btn btn-lg btn-secondary');
+  const textNode = document.createTextNode('Shuffle');
+  buttonWrapper.appendChild(shuffle).appendChild(textNode);
 }
 
 // Function to start the game by clearing the wrapper, creating
