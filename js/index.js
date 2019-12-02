@@ -84,11 +84,7 @@ function startGame() {
 }
 
 function hide() {
-  if (cardsWrapper.style.display === "none") {
-    cardsWrapper.style.display = "block";
-  } else {
-    cardsWrapper.style.display = "none";
-  }
+   cardsWrapper.classList.toggle('hidden');
 }
 
 
