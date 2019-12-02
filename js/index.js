@@ -62,14 +62,7 @@ function shuffleCards() {
     cards[i] = cards[j];
     cards[j] = temp;
   }
-  cards.forEach((card, i) => {
-    const positionFromLeft = i * 25;
-    const cardElement = document.createElement('div');
-    cardElement.setAttribute('data-value', card.value);
-    cardElement.classList.add('card', `${card.suit}-${card.value}`);
-    cardElement.style.left = `${positionFromLeft}px`;
-    cardsWrapper.append(cardElement);
-  });
+  createCards();
 }
 // Function to start the game by clearing the wrapper, creating
 // and appending the buttons and all the cards to the DOM
@@ -86,6 +79,5 @@ function startGame() {
 function hide() {
    cardsWrapper.classList.toggle('hidden');
 }
-
 
 mainButton.addEventListener('click', startGame);
