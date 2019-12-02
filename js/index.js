@@ -45,6 +45,7 @@ function createButtons() {
   showOrHide.setAttribute('class', 'btn btn-lg btn-secondary');
   showOrHide.innerHTML = 'Show/Hide';
   buttonWrapper.appendChild(showOrHide);
+  showOrHide.addEventListener('click', hide);
 
   const magic = document.createElement('BUTTON');
   magic.setAttribute('id', 'start-game');
@@ -72,14 +73,22 @@ function shuffleCards() {
 }
 // Function to start the game by clearing the wrapper, creating
 // and appending the buttons and all the cards to the DOM
+function hocusPocus() {
+  cards.length = 0;
+  createCards();
+}
+
 function startGame() {
   createButtons();
   createCards();
 }
 
-function hocusPocus() {
-  cards.length = 0;
-  createCards();
+function hide() {
+  if (cardsWrapper.style.display === "none") {
+    cardsWrapper.style.display = "block";
+  } else {
+    cardsWrapper.style.display = "none";
+  }
 }
 
 
