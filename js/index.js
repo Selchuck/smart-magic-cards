@@ -28,22 +28,6 @@ function createCards() {
 }
 
 // Function to clear out the initial button and create new buttons to play the game.
-function shuffleCards() {
-  for (let i = cards.length - 1; i > 0; i -= 1) {
-    const j = Math.floor(Math.random() * i);
-    const temp = cards[i];
-    cards[i] = cards[j];
-    cards[j] = temp;
-  }
-  cards.forEach((card, i) => {
-    const positionFromLeft = i * 25;
-    const cardElement = document.createElement('div');
-    cardElement.setAttribute('data-value', card.value);
-    cardElement.classList.add('card', `${card.suit}-${card.value}`);
-    cardElement.style.left = `${positionFromLeft}px`;
-    cardsWrapper.append(cardElement);
-  });
-}
 
 function createButtons() {
   // Your Code
@@ -67,12 +51,34 @@ function createButtons() {
   magic.setAttribute('class', 'btn btn-lg btn-secondary');
   magic.innerHTML = 'Magic';
   buttonWrapper.appendChild(magic);
+  magic.addEventListener('click', hocusPocus);
 }
 
+function shuffleCards() {
+  for (let i = cards.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * i);
+    const temp = cards[i];
+    cards[i] = cards[j];
+    cards[j] = temp;
+  }
+  cards.forEach((card, i) => {
+    const positionFromLeft = i * 25;
+    const cardElement = document.createElement('div');
+    cardElement.setAttribute('data-value', card.value);
+    cardElement.classList.add('card', `${card.suit}-${card.value}`);
+    cardElement.style.left = `${positionFromLeft}px`;
+    cardsWrapper.append(cardElement);
+  });
+}
 // Function to start the game by clearing the wrapper, creating
 // and appending the buttons and all the cards to the DOM
 function startGame() {
   createButtons();
+  createCards();
+}
+
+function hocusPocus() {
+  cards.length = 0;
   createCards();
 }
 
