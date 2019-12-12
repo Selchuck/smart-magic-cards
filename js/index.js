@@ -16,7 +16,7 @@ function createCard() {
   });
 }
 
-function createCards() {
+function createDeck() {
   // Create an array with objects containing the value and the suit of each card
   suits.forEach((suit) => {
     for (let i = 1; i <= 13; i += 1) {
@@ -42,7 +42,7 @@ function shuffleCards() {
 
 function hocusPocus() {
   cards.length = 0;
-  createCards();
+  createDeck();
 }
 
 function hide() {
@@ -76,7 +76,7 @@ function createButtons() {
 // and appending the buttons and all the cards to the DOM
 function startGame() {
   createButtons();
-  createCards();
+  createDeck();
 }
 
 mainButton.addEventListener('click', startGame);
